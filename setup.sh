@@ -5,6 +5,9 @@ HOMEDIR=/home/$USER
 # Updates
 sudo apt-get -y update
 
+sudo apt-get -y install python
+sudo apt-get -y install python-pip
+sudo apt-get -y install python3
 sudo apt-get -y install python3-pip
 sudo apt-get -y install tmux
 sudo apt-get -y install gdb gdb-multiarch
@@ -100,12 +103,11 @@ sudo apt-get -y install imagemagick
 sudo apt-get -y install zbar-tools
 
 # Personal config, comment out if yr not me
-git config --global user.name "Max David"
-git config --global user.email me@maxdavid.com
-sudo sudo apt-get -y install stow
-cd $HOMEDIR
-rm .bashrc
-#git clone --recursive https://github.com/maxdavid/dotfiles
-git clone https://github.com/maxdavid/dotfiles .dotfiles
-cd .dotfiles
-for d in $(ls); do stow $d; done
+# git config --global user.name ""
+# git config --global user.email 
+# sudo sudo apt-get -y install stow
+# cd $HOMEDIR
+# rm .bashrc
+# git clone https://github.com/3N1GMA-HPY/dotfiles .dotfiles
+# cd .dotfiles
+# for d in $(ls); do stow $d; done
