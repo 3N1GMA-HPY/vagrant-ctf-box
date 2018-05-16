@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision :shell, :path => "setup.sh", :privileged => false
 
-  config.vm.synced_folder "vagrant-share", "/home/ubuntu/vmshare"
+  config.vm.synced_folder "/home/enigma/gits/infosec/", "/home/vagrant/"
 
   # config.vm.network "forwarded_port", guest: 80, host: 8899
   config.vm.network "private_network", type: "dhcp"
