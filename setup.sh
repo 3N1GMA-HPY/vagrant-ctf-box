@@ -16,6 +16,8 @@ sudo apt-get -y install foremost
 sudo apt-get -y install ipython
 sudo apt-get -y install python2.7 python-pip python-dev git libssl-dev libffi-dev
 sudo apt-get -y install vim curl 
+sudo apt install ruby
+
 
 # Ptrace enable
 echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
@@ -37,18 +39,26 @@ pip install --upgrade pwntools
 deactivate
 
 # Install pwndbg
+cd $HOMEDIR/tools
 git clone https://github.com/pwndbg/pwndbg
 cd pwndbg
 ./setup.sh
 
-# Install radare2
-cd ~
+# Install voltron
+cd $HOMEDIR/tools
+git clone https://github.com/snare/voltron
+cd voltron
+./install.sh
+
+# Install voltron
+cd $HOMEDIR/tools
 git clone https://github.com/radare/radare2
 cd radare2
-./sys/install.sh
+sys/install.sh
+
 
 # Install binwalk
-cd ~
+cd $HOMEDIR/tools
 git clone https://github.com/devttys0/binwalk
 cd binwalk
 sudo python setup.py install
@@ -92,15 +102,32 @@ sudo apt-get -y install libc6-dev-i386
 # Install r2pipe
 pip install r2pipe
 
+# Install capstone (for ROPGadget)
+cd $HOMEDIR/tools
+git clone https://github.com/aquynh/capstone
+cd capstone
+sudo ./make.sh install
+
 # Install ROPGadget
+cd $HOMEDIR/tools
 git clone https://github.com/JonathanSalwan/ROPgadget
 cd ROPgadget
 sudo python setup.py install
+
+# Install OneGadget
+cd $HOMEDIR/tools
+git clone https://github.com/david942j/one_gadget.git
+cd one_gadget
+gem install one_gadget
 
 # Forensics tools
 sudo apt-get -y install p7zip-full vbindiff
 sudo apt-get -y install imagemagick
 sudo apt-get -y install zbar-tools
+
+# BashIt Theme
+git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+~/.bash_it/install.sh
 
 # Personal config, comment out if yr not me
 # git config --global user.name ""
