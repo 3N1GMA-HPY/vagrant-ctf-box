@@ -14,6 +14,8 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.synced_folder "/home/enigma/gits/infosec/", "/home/vagrant/infosec"
+  config.vm.synced_folder "/home/enigma/gits/repos/comp6447/rootkits", "/home/vagrant/rootkits"
+
 
   # config.vm.network "forwarded_port", guest: 80, host: 8899
   config.vm.network "private_network", type: "dhcp"
@@ -25,3 +27,7 @@ Vagrant.configure("2") do |config|
   end
 
 end
+
+
+
+

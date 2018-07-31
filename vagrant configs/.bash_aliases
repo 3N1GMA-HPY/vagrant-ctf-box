@@ -4,15 +4,16 @@
 
 
 alias cysca='cd /infosec/cysca'
-
 alias gdb='gdb -q'
-
 alias pwndbg='gdb -q -ex "source /home/vagrant/tools/pwndbg/gdbinit.py"'
 alias voltron='gdb -q -ex "source /home/vagrant/tools/voltron/voltron/entry.py"'
 
 
 #bash based commands
-
+sqlmap() {
+    #do things with parameters like $1 such as
+    python ~/tools/sqlmap-dev/sqlmap.py $1
+}
 
 cribdrag() {
     #do things with parameters like $1 such as
@@ -107,4 +108,3 @@ case $OSTYPE in
     alias gtls='git tag -l | sort -V'
     ;;
 esac
-

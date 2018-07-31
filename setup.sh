@@ -15,7 +15,7 @@ sudo apt-get -y install unzip
 sudo apt-get -y install foremost
 sudo apt-get -y install ipython
 sudo apt-get -y install python2.7 python-pip python-dev git libssl-dev libffi-dev
-sudo apt-get -y install vim curl 
+sudo apt-get -y install vim curl
 sudo apt install ruby
 
 
@@ -64,6 +64,12 @@ cd binwalk
 sudo python setup.py install
 sudo apt-get -y install squashfs-tools
 sudo apt-get -y install python-lzma
+
+# Install Metasploit
+cd $HOMEDIR/tools
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
+  sudo chmod 755 msfinstall && \
+  sudo ./msfinstall
 
 # Install american-fuzzy-lop
 sudo apt-get -y install clang llvm
@@ -120,6 +126,11 @@ git clone https://github.com/david942j/one_gadget.git
 cd one_gadget
 gem install one_gadget
 
+
+# Install SQLMap
+cd $HOMEDIR/tools
+git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
+
 # Forensics tools
 sudo apt-get -y install p7zip-full vbindiff
 sudo apt-get -y install imagemagick
@@ -129,9 +140,16 @@ sudo apt-get -y install zbar-tools
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 ~/.bash_it/install.sh
 
+# BashIt Configs
+sudo apt-get -y install wget
+cd $HOMEDIR
+wget https://raw.githubusercontent.com/HAPPY3N1GMA/vagrant-ctf-box/master/vagrant%20configs/.bash_aliases
+yes | rm .bashrc
+wget https://raw.githubusercontent.com/HAPPY3N1GMA/vagrant-ctf-box/master/vagrant%20configs/.bashrc
+
 # Personal config, comment out if yr not me
 # git config --global user.name ""
-# git config --global user.email 
+# git config --global user.email
 # sudo sudo apt-get -y install stow
 # cd $HOMEDIR
 # rm .bashrc
