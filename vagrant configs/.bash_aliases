@@ -3,7 +3,7 @@
 #
 
 
-alias cysca='cd /infosec/cysca'
+alias cysca='cd ~/infosec/cysca'
 alias gdb='gdb -q'
 alias pwndbg='gdb -q -ex "source /home/vagrant/tools/pwndbg/gdbinit.py"'
 alias voltron='gdb -q -ex "source /home/vagrant/tools/voltron/voltron/entry.py"'

@@ -143,6 +143,7 @@ git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 # BashIt Configs
 sudo apt-get -y install wget
 cd $HOMEDIR
+yes | rm .bash_aliases
 wget https://raw.githubusercontent.com/HAPPY3N1GMA/vagrant-ctf-box/master/vagrant%20configs/.bash_aliases
 yes | rm .bashrc
 wget https://raw.githubusercontent.com/HAPPY3N1GMA/vagrant-ctf-box/master/vagrant%20configs/.bashrc
