@@ -3,6 +3,7 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/xenial64"
+  #config.vm.box = "ubuntu/bionic64"
 
   config.vm.network "forwarded_port", guest: 22, host: 2222, host_ip:
     "127.0.0.1", id: 'ssh'
@@ -13,8 +14,8 @@ Vagrant.configure("2") do |config|
     vb.customize ["modifyvm", :id, "--cableconnected1", "on"]
   end
 
-  config.vm.synced_folder "/home/enigma/gits/infosec/", "/home/vagrant/infosec"
-  config.vm.synced_folder "/home/enigma/gits/repos/comp6447/rootkits", "/home/vagrant/rootkits"
+  config.vm.synced_folder "/media/enigma/Linux/Infosec/", "/home/vagrant/infosec"
+  #config.vm.synced_folder "/home/enigma/gits/repos/comp6447/rootkits", "/home/vagrant/rootkits"
 
 
   # config.vm.network "forwarded_port", guest: 80, host: 8899
